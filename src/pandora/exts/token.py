@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import os
 from jwt import decode
 
 from ..openai.utils import Console
@@ -46,3 +47,26 @@ def check_access_token_out(access_token, api=False):
     except Exception as e:
         Console.error('### Invalid access token: {}'.format(str(e)))
         return False
+
+
+def get_token_by_name(name):
+    tokens_file = "/Users/tao/Work/Fio/ChatGPT/pandora-gpt/pandora/access_tokens.json"
+
+    if not os.path.isfile(tokens_file):
+        raise Exception('Error: {} is not a file.'.format(tokens_file))
+
+    import json
+    with open(tokens_file, 'r') as f:
+        tokens = json.load(f)
+
+    # valid_token {'token': '', 'email': '', 'password': ''}
+    valid_token = {}
+    for key, value in tokens.items():
+        if name == key:
+            valid_token = value
+            break
+
+    if valid_token:
+        return valid_token['token']
+    else:
+        return None
