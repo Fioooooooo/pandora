@@ -50,7 +50,7 @@ def check_access_token_out(access_token, api=False):
 
 
 def get_token_by_name(name):
-    tokens_file = "/Users/tao/Work/Fio/ChatGPT/pandora-gpt/pandora/access_tokens.json"
+    tokens_file = "/data/access_tokens.json"
 
     if not os.path.isfile(tokens_file):
         raise Exception('Error: {} is not a file.'.format(tokens_file))
