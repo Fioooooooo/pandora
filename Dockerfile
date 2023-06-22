@@ -10,7 +10,7 @@ ADD . .
 
 RUN pip config set global.index-url https://mirrors.cloud.tencent.com/pypi/simple
 
-COPY Pandora_Cloud-0.4.4.1-py3-none-any.whl /opt/app
+COPY Pandora_Cloud-0.4.9.1-py3-none-any.whl /opt/app
 
 RUN pip install /opt/app/Pandora_Cloud-0.4.4.1-py3-none-any.whl
 
