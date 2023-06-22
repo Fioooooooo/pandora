@@ -93,6 +93,8 @@
   docker build -t pandora .
   docker run -it --rm pandora
   ```
+  
+* Serverless部署见项目：[pandora-cloud-serverless](https://github.com/pengzhile/pandora-cloud-serverless)
 
 * 输入用户名密码登录即可，登录密码理论上不显示出来，莫慌。
 * 简单而粗暴，不失优雅。
@@ -118,6 +120,7 @@
 * `PANDORA_API` 使用`gpt-3.5-turbo`API请求，**你可能需要向`OpenAI`支付费用**。
 * `PANDORA_SENTRY` 启用`sentry`框架来发送错误报告供作者查错，敏感信息**不会被发送**。
 * `PANDORA_VERBOSE` 显示调试信息，且出错时打印异常堆栈信息，供查错使用。
+* `PANDORA_THREADS` 指定服务启动的线程数，默认为 `8`，Cloud模式为 `4`。
 * 使用Docker方式，设置环境变量即可，无视上述`程序参数`。
 
 ## 关于 Access Token
